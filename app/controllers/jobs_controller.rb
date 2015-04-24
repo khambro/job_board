@@ -13,10 +13,16 @@ class JobsController < ApplicationController
     redirect_to jobs_path
   end
 
+  def edit
+    @job = Job.find(params[:id])
+  end
+
   private
 
   def job_params
     params.require(:job).permit(:title,:description, :location, :pay)
   end
+
+
 
 end
